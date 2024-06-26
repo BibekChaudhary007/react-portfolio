@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Toaster } from "react-hot-toast";
+import Contact from "./component/Contact";
+import Header, { HeaderPhone } from "./component/Header";
+import Home from "./component/Home";
+import Services from "./component/Services";
+import Testimonial from "./component/Testimonial";
+import Timeline from "./component/Timeline";
+import Work from "./component/Work";
+import Footer from "./component/Footer";
+import {  useState } from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [menuOpen, setMenuOpen] = useState(false)
+ 
+
+
+
+
+  return  (
+    <>
+      <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+      <Home />
+      <Work />
+      <Timeline />
+      <Services />
+      <Testimonial />
+      <Contact />
+      <Footer />
+      <Toaster />
+    </>
+  ) 
 }
 
 export default App;
